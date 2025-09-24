@@ -14,7 +14,7 @@ This global `README.md` defines general rules and conditions,
 see individual directories for task-specific information.
 
 ## Point table
-See [this shared table](https://docs.google.com/spreadsheets/d/11OnE4a-b27eOJ00pfbsYOk7uSdr0hzKrELs_vFG3a_Q/edit?usp=sharing)
+See [this shared table](https://docs.google.com/spreadsheets/d/17XuX5tgvh_E0u17Y4BXtQK-qVt1qnr9zAXVHGkYrNWs/edit?usp=sharing)
 for current points. Please check the due dates of each task.
 The primary source of organizational information is **the shared table**, not
 the GIT repository.
@@ -97,13 +97,13 @@ is in the 3rd step (granting permissions to us = lab supervisors).
 2. Connect it to
 our shared GIT using `git remote`. The command might look like this
 ```bash
-$ git remote add origin https://github.com/pepcape/NPGR003-24.git
+$ git remote add origin https://github.com/pepcape/NPGR003-25.git
 ```
 3. Finally, you have to give us permissions to access your private
 repository, this is done using the **"Collaborator"** role.
 Depending on who your lab supervisor is, you invite either
 https://github.com/pepcape or
-https://github.com/todoval.
+https://github.com/tomasiser.
 4. If your GitHub username is a **nickname**, please email us with your
 real name.
 
@@ -112,13 +112,13 @@ real name.
 2. Connect it to
 our shared GIT using `git remote`. The command might look like this
 ```bash
-$ git remote add origin https://github.com/pepcape/NPGR003-24.git
+$ git remote add origin https://github.com/pepcape/NPGR003-25.git
 ```
 3. Finally, you have to give us permissions to access your private
 repository, this is done using the **"Reporter"** role.
 Depending on who your lab supervisor is, you invite either
 https://gitlab.mff.cuni.cz/pelikan or
-https://gitlab.mff.cuni.cz/todoval.
+https://gitlab.mff.cuni.cz/isert.
 
 ## Notes
 * If anything doesn't work well in your **Linux/macOS environment**,
