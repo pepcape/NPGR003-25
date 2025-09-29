@@ -7,28 +7,35 @@ with **all RGB colors** in it. That means it must have at least
 * Your program should have several modes:
   * **trivial mode** using as simple implementation as possible
   * **random mode** (chaotic mode) where you cannot recognize any pattern
-	in the result image
+    in the result image
   * **ornament or pattern mode** where you try to implement any visually
-	appealing ornaments or patterns (based on repetition, mandala-like,
-	etc.)
+    appealing ornaments or patterns (based on repetition, mandala-like,
+    etc.)
 * In any case, your image **must have all 2^24 RGB colors!**
 * The program should use simple **command-line arguments** defining desired
-  image size, image file name, mode and random seed if relevant for the mode.
-  In case of image size smaller than 16M pixels program must write an error
-  message and abort without generating an image.
+  image size, image file name, mode and random seed if relevant for the mode (see
+  the next section for exact format of the arguments)
+  * In case of image size smaller than 16M pixels program must write an error
+    message (starting with `ERROR`) to the **standard output** and abort without
+    generating an image
+  * In any non-standard circumstances, your program should print an message (`ERROR ...`)
+    to the standard output. Please don't use exceptions.
 
 # Command-line arguments
 
-You have to implement these four (`-w, -h, -o, -m`) arguments, only
+You have to implement the four (`-w, -h, -o, -m`) arguments, only
 short versions will be used while testing your solution.
 
 | short | long | description | mandatory |
 | -------- | -------- | ------------------------ | -------- |
 | -w \<int\> | --width \<int\> | Image width in pixels | No |
 | -h \<int\> | --height \<int\> | Image height in pixels | No |
-| -o \<filename\> | --output \<filename\> | Output file-name | No |
+| -o \<filename\> | --output \<filename\> | Output file-name (*.png) | No |
 | -m \<mode\> | --mode \<mode\> | Mode is "trivial", "random" or "ornament" | No |
+| -s \<int\> | --seed \<int\> | Random seed for the "random" mode | No |
 
+Any other meaningful parameters can be implemented, provided they are adequately
+documented.
 
 ## Notes
 You should use `.NET 8` which is available on Windows, macOS and Linux.
@@ -55,7 +62,8 @@ For the parsing of command-line arguments I'd recommend
 It is wise to have reasonable default settings, you can reduce debugging time.
 
 Don't forget to include several reasonable examples in your documentation,
-to show everything your program can do.
+to show everything your program can do (see the section **Examples** in your
+documentation).
 
 # Your solution
 Please place your solution in a separate [solutions](solutions/README.md)

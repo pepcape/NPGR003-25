@@ -134,6 +134,11 @@ https://gitlab.mff.cuni.cz/isert.
   in the `main` branch.
 * It wouldn't hurt to send us an **email** to let us know that you've solved the task.
   Automatic notification system works well on GitHub but not on GitLab.
+* VS solution
+  * Framework: `.NET 8.0 (Long Term Support)`
+  * Set `$(ProjectDir)` in `Debug -> project Options -> Working directory`
+  * Set reasonable command-line options in `Debug -> project Options -> Command line arguments`
+	(the fastest way to run your program and immediately see what it can do)
 * Don't forget to point out the **extra work** you have done (for bonus points).
   Use the "Extra work / Bonuses" section in the documentation.
 * If you want use any third party library, do it correctly and use the
