@@ -31,7 +31,7 @@ short versions will be used while testing your solution.
 | -w \<int\> | --width \<int\> | Image width in pixels | No |
 | -h \<int\> | --height \<int\> | Image height in pixels | No |
 | -o \<filename\> | --output \<filename\> | Output file-name (*.png) | No |
-| -m \<mode\> | --mode \<mode\> | Mode is "trivial", "random" or "ornament" | No |
+| -m \<mode\> | --mode \<mode\> | Mode is "trivial", "random" or "pattern" | No |
 | -s \<int\> | --seed \<int\> | Random seed for the "random" mode | No |
 
 Any other meaningful parameters can be implemented, provided they are adequately
