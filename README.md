@@ -97,9 +97,9 @@ is in the 3rd step (granting permissions to us = lab supervisors).
 2. Connect it to
 our shared GIT using `git remote`. The command might look like this
 ```bash
-$ git remote add origin https://github.com/pepcape/NPGR003-25.git
+$ git remote add upstream https://github.com/pepcape/NPGR003-25.git
 ```
-3. Finally, you have to give us permissions to access your private
+3. You have to give us permissions to access your private
 repository, this is done using the **"Collaborator"** role.
 Depending on who your lab supervisor is, you invite either
 https://github.com/pepcape or
@@ -112,13 +112,17 @@ real name.
 2. Connect it to
 our shared GIT using `git remote`. The command might look like this
 ```bash
-$ git remote add origin https://github.com/pepcape/NPGR003-25.git
+$ git remote add upstream https://github.com/pepcape/NPGR003-25.git
 ```
-3. Finally, you have to give us permissions to access your private
+3. You have to give us permissions to access your private
 repository, this is done using the **"Reporter"** role.
 Depending on who your lab supervisor is, you invite either
 https://gitlab.mff.cuni.cz/pelikan or
 https://gitlab.mff.cuni.cz/isert.
+
+Finally, import data from the `upstream`, you will get the complete original repo,
+you will be able to update it (`git pull upstream main`) and keep it
+in sinc with `NPGR003-25`. However, you should work in the `solution` directory only.
 
 ## Notes
 * If anything doesn't work well in your **Linux/macOS environment**,
