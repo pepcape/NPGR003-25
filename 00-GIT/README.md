@@ -3,9 +3,9 @@
   Briefly:
   1. Create **your own private GIT repository** – [GitLab](https://gitlab.mff.cuni.cz/) and
   [GitHub](https://github.com/) are two recommended platforms.
-  2. Link the original (this) repository as **`remote upstream`** - you can use the command
+  2. **Link the original (this) repository** as **`remote upstream`** - you can use the command
   `git remote add upstream https://github.com/pepcape/NPGR003-25.git`
-  3. Import data from the `upstream`, you will get the complete original repo,
+  3. **Import data** from the `upstream`, you will get the complete original repo,
   you will be able to update it (`git pull upstream main`) and keep it
   in sinc with `NPGR003-25`. However, you should work in the `solution` directory only.
   4. Grant us **permissions** ("reporter", "collaborator") to your repository –
