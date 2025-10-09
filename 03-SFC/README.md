@@ -24,7 +24,7 @@ To get familiar with the syntax and semantics of SVG, we recommend this website:
 [w3schools - SVG Tutorial](https://www.w3schools.com/graphics/svg_intro.asp).
 
 # Command line arguments
-**Mandatory arguments** (you must implement them)
+**Mandatory arguments** (i.e. you must implement them)
 
 | short | long | description | mandatory |
 | -------- | -------- | ------------------------ | -------- |
@@ -41,7 +41,7 @@ To get familiar with the syntax and semantics of SVG, we recommend this website:
   - "dynamic styles" (thickness modulation, color gradients)
 * fractal curve definition parameters - depends on the curve type
 
-Don't forget to describe all arguments in the **documentation**!
+Don't forget to describe **all arguments in the documentation**!
 
 # Output
 If all goes well, you should save the **SVG file** with the required attributes
