@@ -26,6 +26,20 @@ less number of colors (minimum palette size is 1).
   (which you must explain). The colour-poor image is one of the reasons you
   don't need to explain.
 
+# Command-line arguments
+
+You have to implement these three arguments, only
+short versions will be used while testing your solution.
+
+| short | long | description | mandatory |
+| -------- | -------- | ------------------------ | -------- |
+| -i \<filename\> | --input \<filename\> | Input image | Yes |
+| -o \<filename\> | --output \<filename\> | Output file-name (PNG or SVG) | No |
+| -c \<int\> | --colors \<int\> | Required number of colors | No |
+
+Any other meaningful parameters can be implemented, provided they are adequately
+documented.
+
 ## Notes
 You should use `.NET 8` which is available for all platforms now.
 
