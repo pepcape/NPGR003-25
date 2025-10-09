@@ -43,7 +43,7 @@ directory in the repository. You'll find short instructions there.
 
 In this assignment, in addition to creating the implementation, you must
 **create a video file and upload it to one of the public platforms**
-(YouTube, Vimeo, Google Drive...). Don't add your video files into
+(YouTube, Instagram, Facebook, Vimeo, Google Drive...). Don't add your video files into
 a GIT repository!
 
 # Encoding a video file with FFmpeg
