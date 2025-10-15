@@ -51,7 +51,7 @@ If the input arguments are not okay, don't draw anything; just print a
 clear error message to the console.
 
 # Launch date
-**Thursday 24 October 2025**
+**Friday 24 October 2025**
 (Don't work on the solution before this date)
 
 # Deadline

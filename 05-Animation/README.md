@@ -79,7 +79,7 @@ For advanced settings try the [FFmpeg wiki](https://trac.ffmpeg.org/wiki), speci
 creating a video from individual frames is called [Slideshow](https://trac.ffmpeg.org/wiki/Slideshow).
 
 # Launch date
-**Thursday 7 November 2025**
+**Friday 7 November 2025**
 (Don't work on the solution before this date)
 
 # Deadline
