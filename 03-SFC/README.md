@@ -64,8 +64,8 @@ See the shared [point table](https://docs.google.com/spreadsheets/d/17XuX5tgvh_E
 * at least two different fractal curves, at least one must be able
   to fill the plane by itself (SFC curve)
 * you must accept any reasonable image (window) size, if your drawing needs
-  a specific aspect ratio, enclose it in a smaller rectangle. Do not distort
-  the scales on the coordinate axes!
+  a specific aspect ratio, enclose it in a smaller rectangle.
+  **Do not distort the scales on the coordinate axes!**
 
 **Bonus points: up to 7 additional points**
 * interesting graphic design (colors, line thickness, gradients)
