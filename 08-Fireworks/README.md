@@ -195,7 +195,7 @@ The reason for this is the ability to use either `vec3` (RGB) or `vec4`
 See the [fragment.glsl](fragment.glsl) shader yourself if you are interested.
 
 # Your solution
-Please place your solution in a separate [solutions](solutions/README.md)
+Please place your solution in a separate [solutions](../solutions/README.md)
 directory in the repository. You'll find short instructions there.
 
 # Launch date

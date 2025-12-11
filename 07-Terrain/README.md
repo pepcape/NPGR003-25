@@ -366,7 +366,7 @@ Then, if `usePhong` is `true`, Blinn–Phong shading is applied using `fWorld`,
 See the [fragment.glsl](fragment.glsl) shader yourself if you are interested.
 
 # Your solution
-Please place your solution in a separate [solutions](solutions/README.md)
+Please place your solution in a separate [solutions](../solutions/README.md)
 directory in the repository. You'll find short instructions there.
 
 # Launch date
