@@ -44,7 +44,7 @@ Your terrain is a triangle mesh. The subdivision algorithm should:
 Conceptually, you will have a **hierarchy of meshes**: level 0 (coarse) →
 1 → 2 → …, each more detailed than the previous one.
 
-A typical idea (you can adapt it):
+A slightly different idea (based on triangle meshes; you can adapt it):
 
 * For each edge, create a midpoint vertex:
   * position = average of endpoints + random vertical offset,
@@ -181,16 +181,6 @@ In both cases:
   arrays (`vertexBuffer`, etc.) and **pushed to GPU** afterwards.
 * Make sure that the vertex attribute layout in C# matches the layout in `vertex.glsl`:
   positions, colors, normals, texture coordinates.
-
-## Shaders
-The **vertex shader** is almost the “classical” one – doing “model-view-transform” for vertex
-coordinates and passing the rest of the quantities unchanged. The only extension is passing the original
-**world-space coordinates** (`fWorld`) for shading computations in the fragment shader.
-
-The **fragment shader** in the pilot solution is able to compute optional **Phong shading**.
-You will need to provide valid **normal vectors** before turning on the shading!
-You are supposed to update the shaders if you're going to implement more advanced
-terrain visualization (texture[s], different materials, etc.).
 
 ## Normal vectors and shading
 
