@@ -12,7 +12,7 @@ The entire 3D scene (fireworks) must be rendered interactively using the
 * **Gravity** is a constant force pointing downwards (g=9.81 m/s^2)
 * **Drag vector** is pointing against the current velocity - [Wikipedia page](https://en.wikipedia.org/wiki/Drag_(physics))
   ([more simple Czech version](https://cs.wikipedia.org/wiki/Odpor_prost%C5%99ed%C3%AD)).
-  You can experiment with coefficients but basic **laminar (linear)** +
+  You can experiment with coefficients, but basic **laminar (linear)** +
   **turbulent (quadratic)** formula will suffice
 * The concept **"launchers + particles"** is recommended
 * **Launchers** are points or areas where new particles are created
@@ -30,15 +30,15 @@ The entire 3D scene (fireworks) must be rendered interactively using the
 * **Discrete time simulation** approximates an actual continuous spacetime by using a short
   period of time (**delta-t**, `dT` in seconds) to simplify the simulation
   - `dT` could be the time between two successive rendered frames
-    (i.e. 1/60 of the second or so)
-  - We assume that during the simulation step (`dT`) the values of some
+    (i.e., 1/60 of a second or so)
+  - We assume that during the simulation step (`dT`), the values of some
     quantities **remain constant** (although this is not actually true). Velocity
     vector (~drag vector)...
-  -	This is called **"Euler method"** for solving differential equations
+  -	This is called the **"Euler method"** for solving differential equations
     [see the Wikipedia page](https://en.wikipedia.org/wiki/Euler_method).
     Higher order methods (like
     [Runge-Kutta](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods)) are not necessary.
-  - Just a reminder how basic mechanic simulation works:
+  - Just a reminder of how basic mechanic simulation works:
     1. determine all the **forces** active during the simulation step/interval (gravity, drag)
     2. compute the **total acceleration** (`Vector3`) from the forces
     3. apply the acceleration to the current position and velocity - compute the
@@ -62,17 +62,17 @@ It makes no sense to use **Index buffers** (`Gl.DrawElements()`) to draw points,
 you should call `Gl.DrawArrays()` instead.
 
 You should keep the coordinates of all the simulated particles in one large
-**vertex buffer** (`VB`). Don't complicate you implementation too much - there
-could be a secondary array `List<struct Particle> Particles`(usig the same
+**vertex buffer** (`VB`). Don't complicate your implementation too much - there
+could be a secondary array `List<struct Particle> Particles`(using the same
 indices as the `VB`) to describe the set of particles. `VB` will be used
 for rendering, `Particles` for everything else. **Don't read** from GPU's copy
 of vertex buffer, just update it using `Gl.BufferSubData()` calls (the process could
 be summarized as **"Simulate - UpdateVB - Render"**).
 The only complication arises when a particle **retires**. You should either reuse
-its index immediately or come up with some mechanism to tell the vertex
+its index immediately, or come up with some mechanism to tell the vertex
 shader to avoid that vertex...?
 
-No special **fragment shader** is required, you can only change it in case of
+No special **fragment shader** is required; you can only change it in case of
 advanced appearance improvements.
 
 # Sil.NET framework
@@ -96,17 +96,17 @@ OpenGL ([Silk.NET](https://www.nuget.org/packages/Silk.NET/)) project with
   - `-t` - optional texture file (default is `:check:` = checkerboard)
 - console window is kept for simple messaging (`Util.Ut.Message()`)
 - [Trackball](../Silk3D/shared/Trackball.cs) support
-- `class Util.FPS` is used for measuring FPS (Frames Per Seconds) and PPS
+- `class Util.FPS` is used for measuring FPS (Frames Per Second) and PPS
   (Primitive Per Second)
   - try switching "Vertical synchronization" (VSync) on and off (key `V`)!
 - **keyboard** and **mouse** event handling (including simple help `F1`)
   - `KeyDown()`, `KeyUp()` for the keyboard
   - `MouseDown()`, `MouseUp()`, `MouseDoubleClick()`, `MouseMove()`, `MouseScroll()`
     for the mouse
-- simulation and rendering of simple **particle system**
+- simulation and rendering of a simple **particle system**
   - `Particle` is a **point** in 3D (position, color, age, size -
-    you'll need more attributes for a fireworks!)
-  - `Simulation` is the whole particle system, responsible mainly for particle
+    you'll need more attributes for fireworks!)
+  - `Simulation` is the whole particle system, responsible mainly for the particle
     management (creating, destroying)
 
 ## Simulation
@@ -122,7 +122,7 @@ number of particles as close to `Simulation.MaxParticles` as possible. If some
 particles are retired, new ones are created.
 
 Each `Particle` has an age, initialized to the lifespan value at the beginning.
-The size and color of a particle changes according to its age. Please be inspired by this
+The size and color of a particle change according to its age. Please be inspired by this
 and use a mechanism that fits your fireworks logic.
 
 One more **warning** - the logic of your fireworks simulator should be different, you
@@ -137,7 +137,7 @@ is being retired and needs to be removed from the system.
 
 The pilot version of the `Particle.SimulateTo()` function is very simple. I just rotate
 the particles around a globally defined common axis. Each particle has its own position, rotation
-speed and color generated at creation time. Your **simulation logic** must be more
+speed, and color generated at creation time. Your **simulation logic** must be more
 complicated!
 
 ### Functions `FillBuffer(float[] buffer, ref int i)`
@@ -168,7 +168,7 @@ uniform mat4 projection;
 **Output values** - they should be in sync with the **input values of the fragment shader**.
 Note that `fWorld` is the original world space coordinates (before the "view" and
 "projection" transformations) for shading (I know, shading is not a big deal
-in Fireworks but you do not need to turn it on).
+in Fireworks, but you do not need to turn it on).
 ```glsl
 out vec3 fColor;
 out vec2 fTxt;
@@ -181,9 +181,9 @@ The last note is about **"built-in" output variables**. We are using two of them
 See the [vertex.glsl](vertex.glsl) shader yourself if you are interested.
 
 ### Fragment shader `fragment.glsl`
-Fragment shader is used for coloring the fragments (pixels).
+A fragment shader is used for coloring the fragments (pixels).
 Our shader has optional texturing (`texture()`) and optional Phong shading
-(actually most of the shader code).
+(actually, most of the shader code).
 
 Note that the output value is explicitly declared in the shader
 ```glsl
@@ -218,7 +218,7 @@ See the shared [point table](https://docs.google.com/spreadsheets/d/17XuX5tgvh_E
 * Animation of launch ramps
 * Multiple rocket/particle types
 * Multi-stage explosions
-* Color/point-size changes during life of a particle/rocket...
+* Color/point-size changes during the life of a particle/rocket...
 * Visualization of rocket trajectories
 * Interactive fireworks control (mouse, keyboard). Launcher fire trigger
 * Advanced shading effects, etc.

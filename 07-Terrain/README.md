@@ -1,5 +1,5 @@
 # Task 07-Terrain
-Your task is to implement fractal terrain generation using a "subdivision" algorithm. 3D scene will
+Your task is to implement fractal terrain generation using a "subdivision" algorithm. The 3D scene will
 be displayed in an interactive environment using
 [OpenGL library](https://www.opengl.org/) bound to the .NET by the
 [Silk.NET library](https://github.com/dotnet/Silk.NET).
@@ -13,20 +13,20 @@ One slightly outdated page -
 
 I'd recommend simple and efficient
 [Diamond-square algorithm](https://en.wikipedia.org/wiki/Diamond-square_algorithm), but
-you can use any algorithm which is capable of creating terrains gradually, by increasing
+you can use any algorithm that is capable of creating terrains gradually, by increasing
 the subdivision (recursion) depth.
 
 ## Commands
 Use **keyboard commands** to change the terrain triangle mesh. You should implement at least
 these commands:
-* **Subdivide** the mesh - create more detailed mesh. You should keep the shared vertices
+* **Subdivide** the mesh - create a more detailed mesh. You should keep the shared vertices
   and insert new ones according to the defined Hausdorff coefficient (relative amplitude of the
   random displacement of the middle points).
-* **Updivide** the mesh - return back to the coarser mesh, so number of vertices and triangles will
+* **Updivide** the mesh - return to the coarser mesh, so the number of vertices and triangles will
   disappear. Executing the Updivide+Subdivide command pair will cause the original terrain to
   change slightly.
 * Change the **Hausdorff coefficient** - random subdivision of an edge should use the random value
-  based on original edge size and this coefficient.
+  based on the original edge size and this coefficient.
 * You should compute **normal vectors** (at the vertices) automatically, use the `I` key to toggle the
   shading mode to see results.
 * Include all the **new keyboard commands** (hotkeys) in the `F1` help list.
@@ -38,12 +38,12 @@ Index buffer[s] (`IB`) should be used to define triangles of the mesh (three ind
 You have two options:
 1. either you will re-upload the whole `VB` and `IB` every time subdivision/updivision
 is required,
-2. or you come up with a smarter solution (e.g. you can allocate full-sized `VB` at the beginning,
+2. or you come up with a smarter solution (e.g., you can allocate full-sized `VB` at the beginning,
 using only sparse vertices from it, according to `IB` specific to every subdivision level). `VB` will
-be updated but index buffers can be prepared in advance and remain constant.
+be updated, but index buffers can be prepared in advance and remain constant.
 
 **Vertex shader** is almost the "classical" one - doing "model-view-transform" for vertex
-coordinates, passing the rest of quantities unchanged. The only extension is passing the original
+coordinates, passing the rest of the quantities unchanged. The only extension is passing the original
 *world-space coordinates* for shading computations in the fragment shader.
 
 **Fragment shader** in the pilot solution is able to compute optional "Phong shading".
